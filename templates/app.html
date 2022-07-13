@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <link rel="stylesheet" href="/static/index.css" />
+  </head>
+  <body>
+    <div class="center">
+      <div id="voice-recorder">
+        <input type="checkbox" id="audio-record" />
+        <label for="audio-record">
+          <svg width="100px" height="100px" viewBox="0 0 100 100">
+            <circle class="circle" cx="50" cy="50" r="47" />
+          </svg>
+          <div class="icone" id="record">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <div class="dots" id="stop">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </label>
+        <i id="instruction-text" style="font-size: 18px; margin-top: 10px"
+          >"click to start recording"</i
+        >
+        <p
+          id="from-language-select"
+          style="
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            cursor: pointer;
+          "
+        ></p>
+        <p
+          id="to-language-select"
+          style="font-size: 18px; margin-top: 0px; cursor: pointer"
+        ></p>
+        <p
+          style="
+            visibility: hidden;
+            font-size: 22px;
+            margin-bottom: 0px;
+            margin-top: 0px;
+          "
+          id="output-text"
+        >
+          Transcript:
+        </p>
+        <p
+          style="
+            visibility: hidden;
+            font-size: 22px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+          "
+          id="translated-text"
+        >
+          Translation:
+        </p>
+        <div class="cover-spin" id="audio-loader"></div>
+        <audio controls id="audio-player" style="visibility: hidden">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+      <div class="vertical-break"></div>
+
+      <div id="video-uploader">
+        <form id="video-form" enctype="multipart/form-data">
+          <i style="font-size: 18px">"upload video to translate"</i><br />
+          <br />
+          <input class="button" type="file" name="videofile" />
+          <button class="button" id="upload-button" style="" type="button">
+            Translate
+          </button>
+        </form>
+        <p
+          id="from-language-select-video"
+          style="
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 0px;
+            cursor: pointer;
+          "
+        ></p>
+        <p
+          id="to-language-select-video"
+          style="font-size: 18px; margin-top: 0px; cursor: pointer"
+        ></p>
+        <video
+          controls
+          id="video-player"
+          height="200"
+          muted
+          style="visibility: hidden; margin-top: 0px"
+        >
+          Your browser does not support the video tag.
+        </video>
+        <div
+          class="cover-spin"
+          id="video-loader"
+          style="margin-top: 10px"
+        ></div>
+        <p
+          style="visibility: hidden; font-size: 22px; margin-top: -40px"
+          id="video-text"
+        >
+          Transcript:
+        </p>
+        <p
+          style="visibility: hidden; font-size: 22px; margin-top: -20px"
+          id="video-translated-text"
+        >
+          Translation:
+        </p>
+        <audio controls id="audio-player-video" style="visibility: hidden">
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+
+      <a
+        href="/"
+        class="button"
+        style="
+          position: absolute;
+          bottom: 50px;
+          text-decoration: none;
+        "
+        >Go back</a
+      >
+    </div>
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="/static/audio.js"></script>
+  </body>
+</html>
